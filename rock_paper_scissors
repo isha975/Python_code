@@ -1,0 +1,24 @@
+choices = ["rock","paper","scissors"]
+import random
+
+loop = 1
+while loop ==1:
+  player = input("rock, paper, or scissors? ")
+  computer = choices[random.randrange(0,3)]
+  if computer == player:
+    print("tie")
+  elif player == "rock" and computer == "paper":
+    print("computer wins! paper covers rock")
+  elif player == "rock" and computer == "scissors":
+    print("player wins! rock breaks scissors")
+  elif player == "paper" and computer == "rock":
+    print("player wins! paper covers rock")
+  elif player == "paper" and computer == "scissors":
+    print("computer wins! scissors cut paper")
+  elif player == "scissors" and computer == "rock":
+    print("computer wins! rock breaks scissors")
+  elif player == "scissors" and computer == "paper":
+    print("player wins! scissors cut paper")
+  else:
+    print("invalid")
+  print()
