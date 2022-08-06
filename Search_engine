@@ -1,0 +1,22 @@
+import tkinter as tk
+import webbrowser as wb
+window = tk.Tk()
+window.configure(bg = "#51C9FF")
+window.title("Search engine")
+window.geometry("900x900")
+
+label = tk.Label(window, text = "SEARCH ENGINE", font = ("times new roman", 75))
+label.pack(pady = 50)
+
+label2 = tk.Label(window, text = "Enter the URL:", font = ("times new roman", 35))
+label2.pack(pady = 30)
+
+entry = tk.Entry(window, width = 25, font = ("times new roman", 25))
+entry.pack(pady = 20)
+
+def func():
+    url = entry.get()
+    wb.open(url)
+
+button = tk.Button(window, text = "SEARCH!", font = ("times new roman", 35), command = func)
+button.pack(pady = 20)
