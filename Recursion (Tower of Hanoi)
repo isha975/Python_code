@@ -1,0 +1,9 @@
+discs = int(input("How many discs are you going to use? "))
+def toh(discs, srod, drod, arod):
+  if discs == 1:
+    print("Move disk",discs,"from rod",srod,"to rod",drod)
+  else:
+    toh(discs-1, srod, arod, drod)
+    print("Move disk",discs,"from rod",srod,"to rod",drod)
+    toh(discs-1, arod, drod, srod)
+toh(discs, "A", "C", "B")
