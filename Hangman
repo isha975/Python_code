@@ -1,0 +1,40 @@
+import random
+
+wordbank = ["rainbow", "dolphin", "knowledgeable", "arrangement", "continuous", "differentiable", "emphasize", "decapitator", "miraculous"]
+
+word = random.choice(wordbank)
+guess = ""
+lives = 7
+
+print("----------- HANGMAN GAME -----------")
+
+while lives > 0:
+  error = 0
+  for i in word:
+    if i in guess:
+      print(i, end = "")
+    else:
+      print("_",end = "")
+      error += 1
+  if error == 0:
+    print()
+    print()
+    print("You won! The word was" , word, ".")
+    break
+  print()
+  print()
+  letter = input("Guess a letter: ")
+  while len(letter) > 1:
+    print("Input only one letter")
+    print()
+    letter = input("Guess a letter: ")
+  print()
+  guess += letter
+  if letter not in word:
+    lives -= 1
+    print()
+    print("This letter is not in the word. You have ", lives, " lives remaining.")
+    print()
+    if lives == 0:
+      print()
+      print("You lost the game! The word was", word, ".")
